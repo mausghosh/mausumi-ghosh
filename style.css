@@ -269,6 +269,61 @@ footer.site-footer{
 }
 .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
+/* =========================
+   LIFE SCIENCE MANAGEMENT
+   ========================= */
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.learning-card {
+  padding: 18px 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.025);
+}
+
+.learning-card h4 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: #c58cff;
+}
+
+.learning-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #b8c2d1;
+}
+/* Keep every timeline row aligned */
+.timeline-item {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+/* Prevent the training cards from affecting the next timeline item */
+.timeline-body {
+  min-width: 0;
+}
+
+.learning-grid {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media(max-width:900px){
   .skill-grid,.cert-grid,.pub-grid{grid-template-columns:repeat(2,1fr)}
   .contact-grid{grid-template-columns:1fr}
