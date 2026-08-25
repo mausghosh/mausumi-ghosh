@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Mausumi Ghosh — Scientific Portfolio</title>
+<meta name="description" content="Interactive scientific portfolio of Dr. Mausumi Ghosh — biochemistry, data, and pharmaceutical quality.">
+
+<style>
+:root{
+  --bg:#0a0d12;
+  --panel:#11161d;
+  --panel2:#151c24;
+  --text:#f7f8fb;
+  --muted:#a6afbd;
+  --line:#2a3442;
+  --mint:#8ef0c6;
+  --purple:#b994ff;
+  --pink:#ee7bb6;
+  --peach:#f7a36f;
+  --blue:#79b8ff;
+  --yellow:#f1d875;
+  --shadow:0 28px 80px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 12% 8%,rgba(185,148,255,.08),transparent 24%),
+    radial-gradient(circle at 86% 18%,rgba(238,123,182,.06),transparent 26%),
+    var(--bg);
+  color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.shell{width:min(1180px,calc(100% - 34px));margin:auto}
+
+nav{
+  position:sticky;top:0;z-index:30;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(10,13,18,.8);
+  backdrop-filter:blur(14px);
+}
+.nav-inner{
+  height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{
+  font-weight:800;
+  letter-spacing:-.03em;
+}
+.brand span{
+  background:linear-gradient(90deg,var(--purple),var(--pink),var(--peach));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.links{display:flex;gap:18px;flex-wrap:wrap}
+.links a{font-size:.84rem;color:var(--muted)}
+.links a:hover{color:var(--text)}
+
+.hero{
+  min-height:calc(100vh - 68px);
+  display:grid;
+  align-items:center;
+  padding:72px 0;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:56px;
+  align-items:center;
+}
+.kicker{
+  color:var(--blue);
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-size:.72rem;
+  margin:0 0 14px;
+}
+h1{
+  margin:0;
+  font-size:clamp(3.8rem,8vw,7.8rem);
+  line-height:.88;
+  letter-spacing:-.065em;
+  font-weight:900;
+}
+.gradient{
+  background:linear-gradient(90deg,var(--purple),var(--pink),var(--peach));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{
+  max-width:700px;
+  color:var(--muted);
+  line-height:1.75;
+  font-size:1.08rem;
+  margin:26px 0 28px;
+}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  border:1px solid var(--line);
+  background:var(--panel);
+  color:var(--text);
+  padding:12px 16px;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.btn:hover{transform:translateY(-2px);border-color:var(--pink)}
+.btn.primary{
+  background:linear-gradient(90deg,rgba(185,148,255,.18),rgba(238,123,182,.18));
+  border-color:var(--pink);
+}
+
+.lab-frame{
+  padding:18px;
+  background:linear-gradient(135deg,var(--purple),var(--pink),var(--peach));
+  box-shadow:var(--shadow);
+}
+.lab-window{
+  position:relative;
+  min-height:500px;
+  background:#0c1016;
+  overflow:hidden;
+  border-radius:2px;
+}
+.lab-window:before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+.lab-label{
+  position:absolute;left:18px;top:16px;
+  color:var(--muted);
+  font-size:.68rem;letter-spacing:.15em;
+}
+.membrane{
+  position:absolute;left:7%;right:7%;
+  height:58px;
+  display:grid;
+  grid-template-columns:repeat(15,1fr);
+  align-items:center;gap:7px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.membrane.top{top:122px}
+.membrane.bottom{bottom:122px}
+.lipid{position:relative;height:32px}
+.lipid:before,.lipid:after{
+  content:"";position:absolute;left:50%;transform:translateX(-50%)
+}
+.lipid:before{
+  width:13px;height:13px;border-radius:50%;
+  border:1px solid #4b5868;background:#10151d;top:0
+}
+.lipid:after{
+  width:2px;height:18px;background:#3a4655;top:13px
+}
+.pore{
+  position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  width:128px;height:235px;
+  border:2px solid var(--mint);
+  border-radius:66px;
+  background:#0b1117;
+  box-shadow:0 0 0 12px rgba(142,240,198,.05),0 0 45px rgba(142,240,198,.09);
+}
+.pore:after{
+  content:"TRANSPORT";
+  position:absolute;left:50%;bottom:22px;transform:translateX(-50%);
+  color:var(--mint);font-size:.62rem;letter-spacing:.18em
+}
+.protein{
+  position:absolute;left:50%;width:23px;height:23px;
+  border-radius:40% 60% 58% 42%;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  transform:translateX(-50%);
+  box-shadow:0 0 20px rgba(238,123,182,.55);
+  animation:moveProtein 4s ease-in-out infinite;
+}
+.float-dot{
+  position:absolute;width:9px;height:9px;border-radius:50%;
+  opacity:.8;animation:float 7s ease-in-out infinite;
+}
+.d1{left:16%;top:32%;background:var(--yellow)}
+.d2{right:18%;top:40%;background:var(--purple);animation-delay:-2s}
+.d3{left:26%;bottom:20%;background:var(--blue);animation-delay:-4s}
+.d4{right:26%;bottom:26%;background:var(--peach);animation-delay:-5s}
+
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:12px;margin-top:28px
+}
+.stat{
+  border-top:1px solid var(--line);padding-top:12px
+}
+.stat small{display:block;color:var(--muted);letter-spacing:.1em;font-size:.67rem}
+.stat strong{font-size:1rem}
+
+section{padding:110px 0}
+.section-title{margin-bottom:36px}
+.section-title h2{
+  margin:0;
+  font-size:clamp(2.5rem,5vw,5rem);
+  letter-spacing:-.05em;
+  line-height:.95
+}
+.section-title p{color:var(--muted);max-width:720px;line-height:1.7}
+
+.gallery-frame{
+  padding:20px;
+  background:linear-gradient(135deg,var(--purple),var(--pink),var(--peach));
+}
+.gallery{
+  background:#0d1118;
+  padding:28px;
+}
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.project-card{
+  position:relative;
+  min-height:330px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  overflow:hidden;
+  cursor:pointer;
+  transition:.22s ease;
+}
+.project-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--pink);
+}
+.project-visual{
+  height:175px;
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.visual-a{background:radial-gradient(circle at center,rgba(142,240,198,.16),transparent 42%),#0b1117}
+.visual-b{background:radial-gradient(circle at 40% 50%,rgba(185,148,255,.17),transparent 38%),#0b1117}
+.visual-c{background:radial-gradient(circle at 60% 40%,rgba(121,184,255,.14),transparent 38%),#0b1117}
+.visual-d{background:radial-gradient(circle at center,rgba(247,163,111,.15),transparent 40%),#0b1117}
+.orbit{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  border:1px solid rgba(255,255,255,.18);border-radius:50%;
+}
+.orbit.o1{width:170px;height:170px}
+.orbit.o2{width:110px;height:110px;border-style:dashed}
+.channel-mini{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:45px;height:120px;border:1px solid var(--mint);border-radius:24px
+}
+.node{
+  position:absolute;width:18px;height:18px;border-radius:50%;
+  background:var(--pink)
+}
+.n1{left:30%;top:30%}.n2{right:30%;top:42%;background:var(--purple)}
+.n3{left:46%;bottom:18%;background:var(--yellow)}
+.project-copy{padding:20px}
+.project-copy .code{
+  color:var(--blue);font-size:.7rem;letter-spacing:.13em
+}
+.project-copy h3{margin:8px 0;font-size:1.35rem}
+.project-copy p{color:var(--muted);line-height:1.6;font-size:.92rem}
+.project-tags{display:flex;gap:7px;flex-wrap:wrap}
+.project-tags span{
+  border:1px solid var(--line);padding:5px 8px;font-size:.68rem;color:#d8dee7
+}
+
+.pathways{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px
+}
+.path-card{
+  min-height:290px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  padding:22px;
+  cursor:pointer;
+  display:flex;flex-direction:column;justify-content:space-between;
+  transition:.2s
+}
+.path-card:hover,.path-card.active{
+  border-color:var(--purple);
+  background:linear-gradient(180deg,#151b24,#10151c)
+}
+.path-card .num{
+  font-size:4rem;font-weight:900;line-height:1;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.path-card p{color:var(--muted);line-height:1.6}
+.path-detail{
+  margin-top:20px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  padding:24px;
+}
+.path-detail h3{font-size:2rem;margin-bottom:10px}
+.path-detail p{color:var(--muted);line-height:1.7}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tag{
+  border:1px solid var(--line);padding:7px 10px;font-size:.73rem;background:#0d1218
+}
+
+.timeline{display:grid}
+.timeline-item{
+  display:grid;grid-template-columns:190px 1fr;
+  gap:28px;padding:26px 0;border-top:1px solid var(--line)
+}
+.timeline-item:last-child{border-bottom:1px solid var(--line)}
+.timeline-date{color:var(--pink);font-size:.76rem;letter-spacing:.12em}
+.timeline-item p{color:var(--muted);line-height:1.65;margin:0}
+
+.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.skill{
+  border:1px solid var(--line);background:var(--panel);padding:20px
+}
+.skill h3{font-size:1rem;color:var(--purple)}
+.skill p{color:var(--muted);line-height:1.6;margin:0}
+
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:30px
+}
+.contact-copy p{color:var(--muted);line-height:1.7}
+.contact-links{display:grid;gap:10px}
+.contact-link{
+  border:1px solid var(--line);background:var(--panel);padding:16px
+}
+.contact-link:hover{border-color:var(--pink)}
+
+footer.site-footer{
+  border-top:1px solid var(--line);
+  padding:28px 0 44px;
+  display:flex;justify-content:space-between;gap:20px;
+  color:var(--muted);font-size:.7rem;letter-spacing:.12em
+}
+
+.modal{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(3,5,8,.82);
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+}
+.modal.open{display:flex}
+.modal-card{
+  width:min(720px,100%);
+  border:1px solid var(--pink);
+  background:#0d1218;
+  padding:28px;
+  box-shadow:var(--shadow)
+}
+.modal-top{display:flex;justify-content:space-between;gap:20px}
+.modal button.close{
+  border:1px solid var(--line);background:transparent;color:var(--text);
+  cursor:pointer;padding:8px 10px
+}
+.modal p{color:var(--muted);line-height:1.7}
+
+@keyframes moveProtein{
+  0%{top:25px;transform:translateX(-50%) rotate(0deg)}
+  45%{top:95px;transform:translateX(-50%) rotate(100deg)}
+  72%{top:170px;transform:translateX(-50%) rotate(190deg)}
+  100%{top:25px;transform:translateX(-50%) rotate(360deg)}
+}
+@keyframes float{
+  0%,100%{transform:translate(0,0)}
+  50%{transform:translate(18px,-18px)}
+}
+
+@media(max-width:940px){
+  .hero-grid,.contact-grid{grid-template-columns:1fr}
+  .stats,.skill-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+  .links{display:none}
+  .project-grid,.pathways,.stats,.skill-grid{grid-template-columns:1fr}
+  .timeline-item{grid-template-columns:1fr}
+  .lab-frame,.gallery-frame{padding:10px}
+  .gallery{padding:14px}
+  h1{font-size:clamp(3.2rem,17vw,5.2rem)}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="shell nav-inner">
+    <div class="brand">Mausumi<span>.science</span></div>
+    <div class="links">
+      <a href="#work">Research</a>
+      <a href="#pathways">Pathways</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Biochemistry × Data × Industry</p>
+        <h1>Dr. Mausumi<br><span class="gradient">Ghosh</span></h1>
+        <p class="lead">
+          Experimental biochemist working across membrane proteins, electrophysiology,
+          scientific computing, and regulated pharmaceutical environments.
+        </p>
+        <div class="ctas">
+          <a class="btn primary" href="#work">Explore the science</a>
+          <a class="btn" href="#pathways">See career pathways</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><small>CORE</small><strong>Biochemistry</strong></div>
+          <div class="stat"><small>COMPUTE</small><strong>R + Python</strong></div>
+          <div class="stat"><small>INDUSTRY</small><strong>GxP + QA</strong></div>
+          <div class="stat"><small>BASE</small><strong>Heidelberg</strong></div>
+        </div>
+      </div>
+
+      <div class="lab-frame">
+        <div class="lab-window">
+          <div class="lab-label">PROTEIN TRANSLOCATION // INTERACTIVE MODEL</div>
+
+          <div class="membrane top" id="membraneTop"></div>
+          <div class="membrane bottom" id="membraneBottom"></div>
+
+          <div class="pore">
+            <span class="protein"></span>
+          </div>
+
+          <span class="float-dot d1"></span>
+          <span class="float-dot d2"></span>
+          <span class="float-dot d3"></span>
+          <span class="float-dot d4"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="shell">
+      <div class="section-title">
+        <p class="kicker">Selected scientific work</p>
+        <h2>Explore the <span class="gradient">research archive</span></h2>
+        <p>
+          Each tile opens like a research file. The visual language is inspired by creative portfolio galleries,
+          while the content remains scientific.
+        </p>
+      </div>
+
+      <div class="gallery-frame">
+        <div class="gallery">
+          <div class="project-grid">
+
+            <article class="project-card" data-project="translocation">
+              <div class="project-visual visual-a">
+                <div class="orbit o1"></div>
+                <div class="orbit o2"></div>
+                <div class="channel-mini"></div>
+              </div>
+              <div class="project-copy">
+                <div class="code">EXPERIMENT 001</div>
+                <h3>Protein Translocation Pores</h3>
+                <p>Molecular mechanisms of protein import and retro-translocation across membranes.</p>
+                <div class="project-tags">
+                  <span>PEX5</span><span>HRD</span><span>Membranes</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-project="electrophysiology">
+              <div class="project-visual visual-b">
+                <div class="orbit o1"></div>
+                <div class="node n1"></div><div class="node n2"></div><div class="node n3"></div>
+              </div>
+              <div class="project-copy">
+                <div class="code">EXPERIMENT 002</div>
+                <h3>Single-Channel Electrophysiology</h3>
+                <p>Functional characterization of ion channels and membrane pores.</p>
+                <div class="project-tags">
+                  <span>Ion channels</span><span>Conductance</span><span>Biophysics</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-project="proteins">
+              <div class="project-visual visual-c">
+                <div class="orbit o1"></div>
+                <div class="orbit o2"></div>
+                <div class="node n1"></div><div class="node n2"></div>
+              </div>
+              <div class="project-copy">
+                <div class="code">EXPERIMENT 003</div>
+                <h3>Membrane Protein Systems</h3>
+                <p>Expression, purification, reconstitution and functional analysis of complex membrane proteins.</p>
+                <div class="project-tags">
+                  <span>PEX5</span><span>HRD1</span><span>TMBIM5</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-project="data">
+              <div class="project-visual visual-d">
+                <div class="orbit o1"></div>
+                <div class="node n1"></div><div class="node n2"></div><div class="node n3"></div>
+              </div>
+              <div class="project-copy">
+                <div class="code">COMPUTE 001</div>
+                <h3>Scientific Data Pipelines</h3>
+                <p>R and Python workflows for analysis, automation, visualization and reproducible research.</p>
+                <div class="project-tags">
+                  <span>R</span><span>Python</span><span>Automation</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pathways">
+    <div class="shell">
+      <div class="section-title">
+        <p class="kicker">Three connected pathways</p>
+        <h2>Science that moves <span class="gradient">between worlds</span></h2>
+      </div>
+
+      <div class="pathways">
+        <button class="path-card active" data-path="research">
+          <div class="num">01</div>
+          <div>
+            <h3>Research</h3>
+            <p>Membrane proteins, molecular transport, electrophysiology, experimental biochemistry.</p>
+          </div>
+        </button>
+
+        <button class="path-card" data-path="data">
+          <div class="num">02</div>
+          <div>
+            <h3>Data</h3>
+            <p>R, Python, automation, statistics, scientific visualization and machine learning.</p>
+          </div>
+        </button>
+
+        <button class="path-card" data-path="industry">
+          <div class="num">03</div>
+          <div>
+            <h3>Industry</h3>
+            <p>GxP, CSV, quality systems, CAPA, risk-based validation and project management.</p>
+          </div>
+        </button>
+      </div>
+
+      <div class="path-detail" id="pathDetail">
+        <p class="kicker" id="pathKicker">PATHWAY 01</p>
+        <h3 id="pathTitle">Research</h3>
+        <p id="pathText">
+          Experimental work focused on membrane protein transport, ion-channel function,
+          purification, reconstitution and mechanistic biochemistry.
+        </p>
+        <div class="tag-row" id="pathTags"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="shell">
+      <div class="section-title">
+        <p class="kicker">Career trajectory</p>
+        <h2>From the bench to <span class="gradient">translation</span></h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2019 — 2024</div>
+          <div>
+            <h3>Doctoral & postdoctoral research</h3>
+            <p>
+              Protein import, degradation, membrane protein purification, functional reconstitution
+              and high-resolution electrophysiology across Göttingen and Heidelberg.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2024 — 2025</div>
+          <div>
+            <h3>Scientific expansion</h3>
+            <p>
+              Project management, quality management, GMP, GCP and pharmaceutical-industry training,
+              alongside computational work in R and Python.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2026</div>
+          <div>
+            <h3>Merck — Project Management & Validation Support</h3>
+            <p>
+              GxP document migration, impact and root-cause analysis, TrackWise CAPA records,
+              validation coordination and cross-functional quality work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="shell">
+      <div class="section-title">
+        <p class="kicker">Scientific toolkit</p>
+        <h2>Methods, systems & <span class="gradient">tools</span></h2>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill">
+          <h3>Experimental Science</h3>
+          <p>Protein purification, membrane proteins, electrophysiology, molecular biology, functional reconstitution.</p>
+        </div>
+        <div class="skill">
+          <h3>Data & Programming</h3>
+          <p>Python, R, pandas, NumPy, matplotlib, Plotly, statsmodels, PyTorch, TensorFlow.</p>
+        </div>
+        <div class="skill">
+          <h3>Quality & Validation</h3>
+          <p>GxP, CAPA, deviations, risk assessment, CSV, data integrity, SOPs and documentation.</p>
+        </div>
+        <div class="skill">
+          <h3>Project & Digital Tools</h3>
+          <p>TrackWise, SharePoint, Veeva Vault, Power BI, MS Project, ELN systems and scientific communication.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="shell contact-grid">
+      <div class="contact-copy">
+        <p class="kicker">Connect</p>
+        <h2>Let’s build something <span class="gradient">meaningful</span></h2>
+        <p>
+          Interested in scientific computing, biotechnology, pharmaceutical quality,
+          validation, project management or interdisciplinary life-science work.
+        </p>
+      </div>
+
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:mausumi.ghosh@gmx.de">Email → mausumi.ghosh@gmx.de</a>
+        <a class="contact-link" href="https://www.linkedin.com/in/mausumi-ghosh" target="_blank" rel="noreferrer">LinkedIn → mausumi-ghosh</a>
+        <a class="contact-link" href="#" id="githubPlaceholder">GitHub → add your username</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer shell">
+  <span>DR. MAUSUMI GHOSH // SCIENTIFIC PORTFOLIO</span>
+  <span>BUILT WITH HTML · CSS · JAVASCRIPT</span>
+</footer>
+
+<div class="modal" id="projectModal" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-top">
+      <div>
+        <p class="kicker" id="modalKicker">RESEARCH FILE</p>
+        <h2 id="modalTitle">Project</h2>
+      </div>
+      <button class="close" id="closeModal">Close</button>
+    </div>
+    <p id="modalText"></p>
+    <div class="tag-row" id="modalTags"></div>
+  </div>
+</div>
+
+<script>
+const membraneTop = document.getElementById("membraneTop");
+const membraneBottom = document.getElementById("membraneBottom");
+
+for(let i=0;i<15;i++){
+  const a=document.createElement("span");
+  a.className="lipid";
+  membraneTop.appendChild(a);
+
+  const b=document.createElement("span");
+  b.className="lipid";
+  membraneBottom.appendChild(b);
+}
+
+const pathways = {
+  research:{
+    kicker:"PATHWAY 01",
+    title:"Research",
+    text:"Experimental work focused on membrane protein transport, ion-channel function, purification, reconstitution and mechanistic biochemistry.",
+    tags:["Protein translocation","Electrophysiology","Membrane proteins","Molecular biology","Biophysics"]
+  },
+  data:{
+    kicker:"PATHWAY 02",
+    title:"Data",
+    text:"Scientific computing for reproducible analysis, automation and biological data interpretation, using R and Python as the core computational layer.",
+    tags:["Python","R","pandas","Statistics","Plotly","Automation","Machine learning"]
+  },
+  industry:{
+    kicker:"PATHWAY 03",
+    title:"Industry",
+    text:"Translating scientific thinking into regulated pharmaceutical work through GxP validation, risk-based quality systems, CAPA and cross-functional project management.",
+    tags:["GxP","CSV","Quality Assurance","CAPA","TrackWise","Risk assessment","Project management"]
+  }
+};
+
+const pathCards = document.querySelectorAll(".path-card");
+const pathKicker = document.getElementById("pathKicker");
+const pathTitle = document.getElementById("pathTitle");
+const pathText = document.getElementById("pathText");
+const pathTags = document.getElementById("pathTags");
+
+function renderPath(key){
+  const item=pathways[key];
+  pathCards.forEach(card=>card.classList.toggle("active",card.dataset.path===key));
+  pathKicker.textContent=item.kicker;
+  pathTitle.textContent=item.title;
+  pathText.textContent=item.text;
+  pathTags.innerHTML="";
+  item.tags.forEach(tag=>{
+    const s=document.createElement("span");
+    s.className="tag";
+    s.textContent=tag;
+    pathTags.appendChild(s);
+  });
+}
+pathCards.forEach(card=>card.addEventListener("click",()=>renderPath(card.dataset.path)));
+renderPath("research");
+
+const projects = {
+  translocation:{
+    kicker:"EXPERIMENT 001",
+    title:"Protein Translocation Pores",
+    text:"Research on the molecular mechanisms that move proteins across biological membranes, including peroxisomal protein import and ER retro-translocation complexes.",
+    tags:["PEX5","HRD complex","Protein import","Retro-translocation"]
+  },
+  electrophysiology:{
+    kicker:"EXPERIMENT 002",
+    title:"Single-Channel Electrophysiology",
+    text:"High-resolution functional analysis of ion channels and membrane pores, linking molecular composition to conductance and transport behavior.",
+    tags:["Ion channels","Single-channel","Conductance","Biophysics"]
+  },
+  proteins:{
+    kicker:"EXPERIMENT 003",
+    title:"Membrane Protein Systems",
+    text:"Expression, purification and functional reconstitution of demanding membrane proteins and multi-subunit complexes including PEX5, HRD1 and TMBIM5.",
+    tags:["PEX5","HRD1","TMBIM5","Protein purification"]
+  },
+  data:{
+    kicker:"COMPUTE 001",
+    title:"Scientific Data Pipelines",
+    text:"Automated and reproducible data-analysis workflows using R and Python, with visualization, statistics and scalable scientific data processing.",
+    tags:["R","Python","Automation","Visualization","Statistics"]
+  }
+};
+
+const modal=document.getElementById("projectModal");
+const modalKicker=document.getElementById("modalKicker");
+const modalTitle=document.getElementById("modalTitle");
+const modalText=document.getElementById("modalText");
+const modalTags=document.getElementById("modalTags");
+const closeModal=document.getElementById("closeModal");
+
+document.querySelectorAll(".project-card").forEach(card=>{
+  card.addEventListener("click",()=>{
+    const p=projects[card.dataset.project];
+    modalKicker.textContent=p.kicker;
+    modalTitle.textContent=p.title;
+    modalText.textContent=p.text;
+    modalTags.innerHTML="";
+    p.tags.forEach(tag=>{
+      const s=document.createElement("span");
+      s.className="tag";
+      s.textContent=tag;
+      modalTags.appendChild(s);
+    });
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+  });
+});
+
+function hideModal(){
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden","true");
+}
+closeModal.addEventListener("click",hideModal);
+modal.addEventListener("click",e=>{if(e.target===modal)hideModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")hideModal()});
+
+document.getElementById("githubPlaceholder").addEventListener("click",e=>{
+  e.preventDefault();
+  alert("Replace this placeholder link with your GitHub profile URL once your username is finalized.");
+});
+</script>
+</body>
+</html>

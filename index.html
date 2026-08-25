@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>From Molecules to Data — Dr. Mausumi Ghosh</title>
+<meta name="description" content="Dr. Mausumi Ghosh — Biochemist bridging membrane protein research, scientific data, and pharmaceutical quality." />
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="shell nav-inner">
+    <a class="brand" href="#top">Molecules<span>→</span>Data</a>
+    <div class="links">
+      <a href="#membrane">Membrane</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#publications">Publications</a>
+      <a href="#presentations">Presentations</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="shell hero-inner">
+    <div class="hero-copy">
+    <p class="kicker">Biochemistry × Data × Life Science Industry</p>
+    <h1>From <span class="gradient">Molecules</span><br>to <span class="gradient">Data</span></h1>
+    <p class="lead">I'm Mausumi — a Biochemist who spent four years working out how proteins squeeze through
+      membranes, and now works on the systems, data and documentation that move a molecule toward an actual patient.
+      Same instinct throughout: find out how the thing really works, then write it down so someone else can trust it.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#experience">Where I've been</a>
+      <a class="btn" href="#membrane">Play with the membrane ↓</a>
+    </div>
+    </div>
+    <figure class="hero-portrait">
+      <img src="docs/Images/Personal Pics/Mausumi.png" alt="Portrait of Dr. Mausumi Ghosh" width="900" height="1116">
+      <figcaption>Dr. Mausumi Ghosh · Heidelberg</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section id="membrane">
+  <div class="shell">
+    <div class="section-title">
+      <p class="eyebrow">Interactive model</p>
+      <h2>Move the substrate.<br>Find the <span class="gradient">only way across</span>.</h2>
+      <p>The subject of my doctoral work, in miniature: a lipid bilayer with charged phosphate heads, a gated
+        transporter, and a cargo polypeptide that follows your cursor anywhere in the compartment. Push it against
+        the bilayer and it is held back — the membrane is impermeable. Guide it to the channel instead and the gate
+        opens, the chain unfolds to thread the narrow pore, and it refolds on the far side.</p>
+    </div>
+    <div class="canvas-frame">
+      <canvas id="membraneCanvas"></canvas>
+      <div class="canvas-hint">move the substrate anywhere · cross only via the channel</div>
+      <div class="canvas-readout" id="translocationReadout">translocation 10%</div>
+      <div class="legend">
+        <span><i class="dot pos"></i> Positive phosphate head</span>
+        <span><i class="dot neg"></i> Negative phosphate head</span>
+        <span><i class="dot mol"></i> Cargo polypeptide (substrate)</span>
+        <span><i class="dot lead"></i> Leading end — follows your cursor</span>
+        <span><i class="dot protein"></i> Transporter protein</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="shell">
+    <div class="section-title">
+      <p class="eyebrow">Where I've been</p>
+      <h2>Bench, bilayer,<br>and <span class="gradient">quality systems</span></h2>
+      <p>From exploring how proteins behave at the molecular level to understanding how 
+        science moves into structured, quality-driven processes. My journey covers academic 
+        research, laboratory problem-solving, project coordination, and my transition into 
+        the life-science industry.  </p>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jan 2026 – Mar 2026</div>
+        <div class="timeline-body">
+          <h3>Trainee — Project Management &amp; Validation Support</h3>
+          <p class="org">Merck KGaA</p>
+          <ul>
+            <li>Migrated an entire document archive from Lotus Notes into SharePoint. In GxP-land nothing simply
+              <em>moves</em> — you first prove why, what breaks if it does, and who takes responsibility. So: impact
+              analyses, root-cause digging, and a risk-based approach, with a global team along for the ride.</li>
+            <li>Wrote CAPA and child records in TrackWise — the grown-up way of saying "here is exactly what went
+              sideways, what we did about it, and why it won't happen twice."</li>
+            <li>Acted as translator between global IT, Quality and Validation. Three teams, three dialects of the
+              same language, one migration scope that everyone eventually agreed on.</li>
+            <li>Snuck some design in through the back door: team branding, plus GxP training material that people
+              might genuinely read instead of scrolling past.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">GxP</span><span class="tag">TrackWise</span><span class="tag">CAPA</span>
+            <span class="tag">SharePoint</span><span class="tag">Validation</span><span class="tag">Data Integrity</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Sep 2025 – Mar 2026</div>
+        <div class="timeline-body">
+          <h3>Life Science Management</h3>
+          <p class="org">HGA Gesundheitsakademie</p>
+<ul>
+  <li>Six months exploring how life-science products move from research into regulated environments — covering
+    clinical research, GCP, GMP, quality management, regulatory requirements and project coordination.</li>
+
+  <li>Learned how clinical studies are planned, started, conducted, monitored and documented according to GCP,
+    including study roles, site activities, informed consent, safety reporting and communication between sponsors,
+    CROs, investigators and ethics committees.</li>
+
+  <li>Worked with the documents that keep a clinical trial together — protocol synopses, Investigator's Brochures,
+    CRFs, informed consent documents, study logs, safety documentation and kickoff presentations — and gained an
+    introduction to CTIS and EU clinical trial requirements.</li>
+
+  <li>Built a practical understanding of pharmaceutical quality and GMP: controlled documentation, SOPs,
+    deviations, CAPA, change control, risk-based thinking, data integrity and working within regulated quality
+    systems.</li>
+
+  <li>Practised quality management through process descriptions, work instructions, risk analyses, audit
+    checklists and case studies involving supplier qualification, medical devices and quality requirements in
+    regulated life-science organizations.</li>
+
+  <li>Developed an understanding of audits and compliance — why processes need to be traceable, how findings are
+    documented and followed up, and why "if it isn't documented, it didn't happen" is more than just a saying in
+    regulated science.</li>
+
+  <li>Connected the science with project management: defining responsibilities, coordinating stakeholders,
+    organizing timelines, communicating risks and keeping complex life-science projects structured and moving
+    forward.</li>
+</ul>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Quality Management</span><span class="tag">Quality Assurance</span><span class="tag">EU Regulatory</span><span class="tag">GCP</span><span class="tag">Clinical Documentation</span>
+            <span class="tag">CTIS</span><span class="tag">EU Regulatory</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jul 2019 – Feb 2024</div>
+        <div class="timeline-body">
+          <h3>Research Associate — Membrane proteins &amp; Ion channels</h3>
+          <p class="org">University Medicine Göttingen → Heidelberg University Biochemistry Center</p>
+
+          <div class="move-note">
+            <span class="move-label">Same project, new postcode</span>
+            <p>Partway through my PhD the entire lab packed up and relocated from Göttingen to Heidelberg — and I
+              went with it, project and all. So these read as two positions on paper, but they're one continuous
+              body of work with a change of address in the middle. The unplanned bonus: I got to help build a lab
+              from empty benches upward — unpacking, installing, calibrating, and writing the documentation that
+              made the place actually runnable.</p>
+            <div class="move-legs">
+              <span><strong>Göttingen</strong> · Jul 2019 – Dec 2021</span>
+              <span class="move-arrow">→</span>
+              <span><strong>Heidelberg (BZH)</strong> · Jan 2022 – Feb 2024</span>
+            </div>
+          </div>
+
+          <ul>
+            <li>Coaxed membrane proteins into behaving well enough to study — PEX5, HRD1 and TMBIM5, none of which
+              particularly wanted to be purified — then listened to them by electrophysiology, one single channel
+              at a time.</li>
+            <li>Chased how proteins get imported and degraded, and how those routes go wrong in disease. Worked
+              under GLP conditions, and the results made it into peer-reviewed papers.</li>
+            <li>Built automated R pipelines for data evaluation that cut processing time by 70% — an afternoon's
+              work became a coffee break — and made the output consistent enough to trust.</li>
+            <li>Set up our new electronic lab notebook (eLabFTW) from scratch: wrote the SOPs, set the quality
+              standards, and persuaded a whole lab to actually use it. Arguably the harder half.</li>
+            <li>Mentored 25+ junior researchers, and helped wrangle grants and conference posters.</li>
+          </ul>
+          <figure class="photo-inline">
+            <img src="assets/photos/lab-bench.jpg" alt="Mausumi Ghosh at the lab bench holding a pipette" loading="lazy" width="1000" height="1336">
+            <figcaption>The other 90% of a PhD: a pipette, a bench, and one more attempt.</figcaption>
+          </figure>
+          <div class="tag-row">
+            <span class="tag">Membrane Proteins</span><span class="tag">Electrophysiology</span>
+            <span class="tag">Protein Import</span><span class="tag">ÄKTA FPLC</span>
+            <span class="tag">R</span><span class="tag">GLP</span><span class="tag">eLabFTW</span>
+            <span class="tag">Lab Setup</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Mar 2022 – Sep 2023</div>
+        <div class="timeline-body">
+          <h3>Member, PhD Board <span class="muted-note">— Voluntary</span></h3>
+          <p class="org">Biochemistry Center Heidelberg (BZH)</p>
+          <ul>
+            <li>Organized multiday retreat in a beautiful castle, organized seminars and networking evenings for fellow PhD candidates — the events I'd
+              have wanted in my own first year.</li>
+            <li>Herded stakeholders across administrative offices, research institutes and industry partners, and
+              got them all in the same room on the same date.</li>
+            <li>Promoted it all through digital channels, then collected the feedback so the next one was better.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Event Organisation</span><span class="tag">Stakeholder Management</span>
+            <span class="tag">Science Communication</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="shell">
+    <div class="section-title">
+      <p class="eyebrow">Where I learned it</p>
+      <h2>Education</h2>
+      <p>Delhi → Kiel → Göttingen → Heidelberg. The molecules got smaller, the questions got harder, and the
+        winters got noticeably colder.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">
+          Jul 2019 – Dec 2023
+          <figure class="uni-logo">
+            <img src="assets/uni/goettingen.png" alt="Georg-August-Universität Göttingen logo" loading="lazy" width="300" height="300">
+            <figcaption>Georg-August-Universität Göttingen</figcaption>
+          </figure>
+        </div>
+        <div class="timeline-body">
+          <h3>PhD in Biochemistry</h3>
+          <p class="org">Georg-August University Göttingen</p>
+          <p class="single">Dissertation: <em>Molecular Characterization of Protein Translocation Pores</em> —
+            four and a half years spent on one deceptively simple question: how does a protein get through a
+            membrane that is built specifically to keep things out? Registered in Göttingen, and finished in
+            Heidelberg after the lab relocated mid-project. The membrane at the top of this page is, more or
+            less, my thesis.</p>
+          <div class="photo-strip">
+            <figure>
+              <img src="assets/photos/thesis-submission.jpg" alt="Mausumi Ghosh holding her bound doctoral thesis" loading="lazy" width="1000" height="1333">
+              <figcaption>Thesis handed in — Heidelberg, October 2023.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/photos/graduation.jpg" alt="Mausumi Ghosh celebrating her doctoral graduation" loading="lazy" width="1000" height="1330">
+              <figcaption>Doctoral hat, flowers, and the end of a very long question.</figcaption>
+            </figure>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Protein Translocation</span><span class="tag">Biophysics</span>
+            <span class="tag">Two Cities</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">
+          Oct 2016 – Apr 2019
+          <figure class="uni-logo">
+            <img src="assets/uni/kiel.png" alt="Christian-Albrechts-Universität zu Kiel logo" loading="lazy" width="340" height="114">
+            <figcaption>Christian-Albrechts-Universität zu Kiel</figcaption>
+          </figure>
+        </div>
+        <div class="timeline-body">
+          <h3>M.Sc. in Agrigenomics</h3>
+          <p class="org">Christian-Albrechts-Universität Kiel</p>
+          <p class="single">Thesis: <em>Molecular Analysis of Flowering Time Genes in Beta vulgaris</em> — I spent
+            a very absorbing stretch of my life working out how a sugar beet decides it is time to flower. </p>
+          <div class="tag-row">
+            <span class="tag">Genomics</span><span class="tag">Molecular Biology</span><span class="tag">Plants</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">
+          Aug 2013 – Apr 2016
+          <figure class="uni-logo">
+            <img src="assets/uni/delhi.png" alt="University of Delhi logo" loading="lazy" width="317" height="310">
+            <figcaption>University of Delhi</figcaption>
+          </figure>
+        </div>
+        <div class="timeline-body">
+          <h3>B.Sc. in Biochemistry</h3>
+          <p class="org">University of Delhi</p>
+          <p class="single">Where the whole molecules-to-data habit started.</p>
+          <div class="tag-row">
+            <span class="tag">Biochemistry</span><span class="tag">Foundations</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="shell">
+    <div class="skills-intro">
+    <div class="section-title">
+      <p class="eyebrow">What I bring </p>
+      <h2>From Bench <span class="gradient">to industry</span></h2>
+      <p>Built through years of experiments, troubleshooting, data wrangling, teamwork, 
+        and the occasional protein that absolutely refused to cooperate — now expanded 
+        into quality and regulated life science. </p>
+    </div>
+      <figure class="portrait-plate">
+        <img src="docs/Images/Personal Pics/IMG_20201010_193233.jpg" alt="Portrait of Dr. Mausumi Ghosh" loading="lazy" width="700" height="936">
+      </figure>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <h3>Getting things out of cells</h3>
+        <p>ÄKTA FPLC protein purification, electrophysiology, membrane protein reconstitution, ELISA, SDS-PAGE,
+          Western blot, cloning, CRISPR, PCR, RT-qPCR. Considerable patience for proteins that aggregate on sight.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Making the data behave</h3>
+        <p>R and Python — including the automated pipelines that took 70% off our data processing time — plus Prism,
+          Origin and Excel. Firm believer that time is money.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Proving it properly</h3>
+        <p>GxP, GMP/cGMP, GCP, CAPA management, root-cause and impact analysis, computer system validation,
+          risk-based decisions, data integrity. The unglamorous work that makes everything else count.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Digital tools I work with</h3>
+        <p>TrackWise, SharePoint, ManGO (EDM), Quest, MS Project, eLabFTW — and Canva and Illustrator,
+          because someone has to make the slide readable.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Getting people on the same page</h3>
+        <p>Cross-functional coordination across global IT, Quality and Validation, SOP authoring, stakeholder
+          communication, and mentoring several junior researchers through their first stubborn experiment.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Languages</h3>
+        <p>English (fluent), Hindi and Bengali (native), German (B2 and climbing — an intensive course and a lot of
+          Heidelberg small talk). Pipetting is universal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="shell">
+    <div class="section-title">
+      <p class="eyebrow">Receipts</p>
+      <h2>Certifications &amp; <span class="gradient">training</span></h2>
+      <p>Deciding to move from the bench into regulated life science meant going back to school — deliberately,
+        repeatedly, and mostly in German. Here is the paper trail.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <span class="cert-year">2025</span>
+        <h3>Quality Management Representative</h3>
+        <p>TÜV Rheinland PersCert</p>
+      </div>
+      <div class="cert-card">
+        <span class="cert-year">2025</span>
+        <h3>Quality Assurance (QS)</h3>
+        <p>HGA Gesundheitsakademie</p>
+      </div>
+      <div class="cert-card">
+        <span class="cert-year">2025</span>
+        <h3>Clinical Research — Studienmanagement / Studienassistenz<br>Good Clinical Practice (GCP)</h3>
+        <p>HGA Gesundheitsakademie</p>
+      </div>
+      <div class="cert-card">
+        <span class="cert-year">2025</span>
+        <h3>Good Manufacturing Practice (GMP)<br>Pharmacoeconomics</h3>
+        <p>HGA Gesundheitsakademie</p>
+      </div>
+      <div class="cert-card">
+        <span class="cert-year">2025</span>
+        <h3>Biological and Medical Pharmaceutical Research</h3>
+        <p>HGA Gesundheitsakademie</p>
+      </div>
+      <div class="cert-card">
+        <span class="cert-year">2024</span>
+        <h3>Project Management (IPMA / GPM)<br>Professional Scrum Master I</h3>
+        <p>Alfatraining Bildungszentrum</p>
+      </div>
+      <div class="cert-card">
+        <span class="cert-year">2024</span>
+        <h3>Current Good Manufacturing Practice (cGMP)</h3>
+        <p>GMP Academy</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="shell">
+    <div class="section-title">
+      <p class="eyebrow">Things that survived peer review</p>
+      <h2>Publications</h2>
+      <p>Work on protein import, degradation and membrane proteins from the Göttingen and Heidelberg years — the
+        papers I was part of and my PhD dissertation can be found on my 
+        <a class="inline-link" href="#" id="orcidLink" target="_blank" rel="noopener">ORCID</a> profile.
+      </p>
+    </div>
+    <div class="pub-grid" id="pubGrid">
+      <div class="pub-card">
+        <span class="pub-tag">FEBS Letters · 2021</span>
+        <h3>MICOS and the Mitochondrial Inner Membrane Morphology</h3>
+        <p>Mukherjee, I., Ghosh, M., Meinecke, M.</p>
+        <a class="inline-link" href="https://doi.org/10.1002/1873-3468.14089" target="_blank" rel="noopener">Read publication →</a>
+      </div>
+      <div class="pub-card">
+        <span class="pub-tag">EMBO Journal · 2022</span>
+        <h3>Regulation of Mitochondrial Proteostasis</h3>
+        <p>Patron, M., Ghosh, M., et al.</p>
+        <a class="inline-link" href="https://doi.org/10.15252/embj.2021110476" target="_blank" rel="noopener">Read publication →</a>
+      </div>
+      <div class="pub-card">
+        <span class="pub-tag">Biological Chemistry · 2023</span>
+        <h3>Dynamics of Translocation Pore in Peroxisomal Protein Import</h3>
+        <p>Ghosh, M.*, et al.</p>
+        <a class="inline-link" href="https://www.degruyterbrill.com/document/doi/10.1515/hsz-2022-0170/html" target="_blank" rel="noopener">Read publication →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="presentations">
+  <div class="shell">
+    <div class="section-title">
+      <p class="eyebrow">Portfolio</p>
+      <h2>Four projects,<br>told <span class="gradient">end to end</span></h2>
+      <p>Two from the bench, one from clinical research training, one written for a commercial audience. Each is a
+        full presentation — open any of them and you get the question, the method, and what came out of it.</p>
+    </div>
+    <div class="pres-grid">
+
+      <a class="pres-card" href="assets/presentations/human-pex5-peroxisomal-import.pdf" target="_blank" rel="noopener">
+        <span class="pub-tag">Protein import · PEX5L</span>
+        <h3>How Proteins Enter Peroxisomes</h3>
+        <p>Peroxisomes have to import their proteins from the surrounding cell — but how the import machinery
+          builds a route through the membrane is still open. I asked whether human PEX5L complexes form a genuine
+          membrane channel, and how cargo binding changes what that channel does. Protein isolation, membrane
+          reconstitution and electrophysiology, measured directly at the membrane.</p>
+        <span class="pres-meta">Purification · Reconstitution · Electrophysiology</span>
+        <span class="pres-link">Open presentation →</span>
+      </a>
+
+      <a class="pres-card" href="assets/presentations/tmbim5-calcium-transport.pdf" target="_blank" rel="noopener">
+        <span class="pub-tag">Mitochondria · TMBIM5</span>
+        <h3>How Mitochondria Control Calcium Transport</h3>
+        <p>Calcium is one of the cell's loudest signals, and mitochondria help keep it in check. TMBIM5 sits in the
+          inner mitochondrial membrane and had been proposed to carry calcium — so I tested whether it actually
+          conducts. Purification, reconstitution into lipid vesicles, planar bilayer recordings, and gadolinium
+          sensitivity as the deciding experiment.</p>
+        <span class="pres-meta">LUV reconstitution · Bilayer recording · Gd³⁺ block</span>
+        <span class="pres-link">Open presentation →</span>
+      </a>
+
+      <a class="pres-card" href="assets/presentations/clinical-trial-kickoff.pdf" target="_blank" rel="noopener">
+        <span class="pub-tag">Clinical research · GCP</span>
+        <h3>From Scientific Question to Clinical Trial</h3>
+        <p>Patients with advanced liver cirrhosis are dangerously exposed to bacterial infection, and certain
+          <em>NOD2</em> variants raise that risk further. Built during my Clinical Research Studies Management
+          training as a mock kick-off for a real Phase III study: design, screening and recruitment, visits and
+          consent, randomization, IMP handling, safety, and who is responsible for what.</p>
+        <span class="pres-meta">Company and personnel details fictionalized for training</span>
+        <span class="pres-link">Open presentation →</span>
+      </a>
+
+      <a class="pres-card" href="assets/presentations/easysep-product-portfolio.pdf" target="_blank" rel="noopener">
+        <span class="pub-tag">Scientific sales</span>
+        <h3>Scientific Product Presentation — EasySep™</h3>
+        <p>Written for a Scientific Sales Development application, to show how I would take a life-science
+          portfolio to a customer. Using EasySep™ cell isolation as the example: from the isolation problems
+          researchers actually run into, through the technology and product options, to needs analysis,
+          recommendation and cross-selling.</p>
+        <span class="pres-meta">Product positioning · Needs analysis · Scientific communication</span>
+        <span class="pres-link">Open presentation →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="shell contact-grid">
+    <div>
+      <p class="eyebrow">Say hello</p>
+      <h2>Let's talk science,<br><span class="gradient">data, or quality.</span></h2>
+      <p>I'm looking for work where biochemistry, scientific data and pharmaceutical quality or clinical operations
+        meet — the interface roles, where knowing both sides is the whole point. If that sounds like your team,
+        I'd genuinely like to hear from you.</p>
+    </div>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:mausumi.ghosh@gmx.de">Email → mausumi.ghosh@gmx.de</a>
+      <a class="contact-link" href="https://www.linkedin.com/in/mausumi-ghosh" target="_blank" rel="noopener">LinkedIn → mausumi-ghosh</a>
+      <a class="contact-link" href="#" id="orcidLink2" target="_blank" rel="noopener">ORCID → add your iD</a>
+      <figure class="contact-portrait">
+        <img src="assets/photos/portrait-outdoor.jpg" alt="Portrait of Dr. Mausumi Ghosh outdoors" loading="lazy" width="900" height="1126">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <span>DR. MAUSUMI GHOSH — FROM MOLECULES TO DATA</span>
+    <span>HEIDELBERG, GERMANY</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
